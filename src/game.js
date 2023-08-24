@@ -5,15 +5,14 @@ const { createCard } = require('../src/card')
 const { createDeck, createRound, countCards, endRound } = require('../src/round')
 
 const makeCards = (cards) => {
-  const game = cards.map((card) => {
-    const createCards = createCard(card.id, card.question, card.answers, card.correctAnswer)
-    return createCards
+  console.log(data.prototypeData)
+  return data.prototypeData.map((card) => {
+    return createCard(card.id, card.question, card.answers, card.correctAnswer)
   })
-  return game 
 }
 
 const startGame = () => {
-  const cards = makeCards(prototypeQuestions.slice(0,5))
+  const cards = makeCards(prototypeQuestions)
   const deck = createDeck(cards)
   const round = createRound(deck)
 
@@ -34,5 +33,6 @@ function printQuestion(round) {
 module.exports = { 
   printMessage, 
   printQuestion, 
-  startGame 
+  startGame,
+  makeCards
 };
