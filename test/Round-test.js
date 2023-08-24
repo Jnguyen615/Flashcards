@@ -5,7 +5,6 @@ const { createDeck, countCards, createRound, takeTurn, calculatePercentCorrect, 
 const { createCard } = require('../src/card')
 const cards = require('../src/data')
 
-// const { startGame } = require('../src/game')
 const deck = createDeck(cards.prototypeData)
 const round = createRound(deck)
 
@@ -86,8 +85,6 @@ describe('take turn', function() {
     const badFeedback =  takeTurn('array', round)
     expect(badFeedback).to.equal('Incorrect!')
   })
-
-  
 })
 
 describe('Calculate percent correct', function() {
