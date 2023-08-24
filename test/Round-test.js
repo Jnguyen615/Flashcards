@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const { createDeck, countCards, createRound, takeTurn, calculatePercenteCorrect} = require('../src/round');
+const { createDeck, countCards, createRound, takeTurn, calculatePercentCorrect, endRound} = require('../src/round');
 const { createCard } = require('../src/card')
 const cards = require('../src/data')
 
@@ -23,7 +23,6 @@ describe('deck', function() {
   
   it('should create a deck of cards and count them', function() {
 
-    // const deck = createDeck([card1, card2, card3])
     expect(countCards(deck)).to.deep.equal(3)
   })
 })
@@ -85,8 +84,42 @@ describe('take turn', function() {
   
   it('should return feedback if the guess is incorrect', function() {
     const badFeedback =  takeTurn('array', round)
-    console.log('IncorrectGuessesArray:', round.incorrectGuesses)
     expect(badFeedback).to.equal('Incorrect!')
   })
+
+  
 })
 
+describe('Calculate percent correct', function() {
+  let deck, round
+  
+  beforeEach(() => {
+    deck = createDeck(cards.prototypeData)
+    round = createRound(deck)
+  })
+
+  it('should calculate the percentage of correct answers', function() {
+    takeTurn('boolean', round)
+    takeTurn('sort()', round)
+    takeTurn('filter()', round)
+    takeTurn('forEach', round)
+    const percent = calculatePercentCorrect(round)
+
+    expect(percent).to.equal (25)
+  })
+
+  describe('end round', function(){
+    const deck = createDeck(cards.prototypeData)
+    const round = createRound(deck)
+    // const percent = calculatePercentCorrect(round)
+    it('should print the end-game message and end the game', function() {
+      takeTurn('object', round)
+      takeTurn('function', round)
+      takeTurn('accessor method', round)
+      takeTurn('mutator method', round)
+      const gameOverMessage = endRound(round)
+      
+      expect(gameOverMessage).to.equal(`** Round Over! ** You answered 25% of the questions correctly!`)
+    })
+  })
+})
