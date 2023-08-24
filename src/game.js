@@ -13,9 +13,10 @@ const makeCards = (cards) => {
 }
 
 const startGame = () => {
-  const cards = makeCards(prototypeQuestions)
+  const cards = makeCards(prototypeQuestions.slice(0,5))
   const deck = createDeck(cards)
   const round = createRound(deck)
+
   printQuestion(round)
   printMessage(deck)
   endRound(round)
