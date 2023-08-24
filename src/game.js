@@ -15,12 +15,11 @@ const makeCards = (cards) => {
 const startGame = () => {
   const cards = makeCards(prototypeQuestions)
   const deck = createDeck(cards)
-  const roundOne = createRound(deck)
+  const round = createRound(deck)
+  printQuestion(round)
   printMessage(deck)
-  printQuestion(roundOne)
+  endRound(round)
 }
-
-
 
 function printMessage(deck) {
   console.log(`Welcome to FlashCards! You are playing with ${countCards(deck)} cards.

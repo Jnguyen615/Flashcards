@@ -39,8 +39,15 @@ const calculatePercentCorrect = (round) => {
   
 const endRound = (round) => {
   const percent = calculatePercentCorrect(round)
-  return `** Round Over! ** You answered ${percent}% of the questions correctly!`
-}
+  if(round.currentCard === undefined) {
+    round.currentCard = null;
+  } else {
+    round.currentCard;
+  }
+   console.log(`** Round Over! ** You answered ${percent}% of the questions correctly!`)
+  }
+
+
 
 
 module.exports = {
