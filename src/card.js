@@ -3,19 +3,19 @@ const createCard = (id, question, possibleAnswers, correctAnswer) => {
     id: id,
     question: question,
     answers: possibleAnswers,
-    correctAnswer: correctAnswer
-  }
-}
+    correctAnswer: correctAnswer,
+  };
+};
 
 const evaluateGuess = (guess, correctAnswer) => {
   if (guess === correctAnswer) {
-    return 'Correct!'
+    return 'Correct!';
   } else {
-    return 'Incorrect!'
+    return 'Incorrect!';
   }
-}
+};
 
 module.exports = {
   createCard,
-  evaluateGuess
-}
+  evaluateGuess,
+};
