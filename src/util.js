@@ -3,8 +3,8 @@ const { takeTurn, endRound } = require('./round');
 
 const genList = (round) => {
   let card = round.currentCard;
-  
-  let choices = card.answers.map((answer, index) => {
+
+  let choices = card.possibleAnswers.map((answer, index) => {
     return {
       key: index,
       value: answer
