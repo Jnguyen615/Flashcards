@@ -5,7 +5,7 @@ const { createDeck, countCards, createRound, takeTurn, calculatePercentCorrect, 
 const { createCard } = require('../src/card')
 const cards = require('../src/data')
 
-const { start } = require('../src/game')
+const { startGame } = require('../src/game')
 const deck = createDeck(cards.prototypeData)
 const round = createRound(deck)
 
@@ -105,13 +105,12 @@ describe('Calculate percent correct', function() {
     takeTurn('forEach', round)
     const percent = calculatePercentCorrect(round)
 
-    expect(percent).to.equal (25)
+    expect(percent).to.equal(25)
   })
 
   describe('end round', function(){
     const deck = createDeck(cards.prototypeData)
     const round = createRound(deck)
-    // const percent = calculatePercentCorrect(round)
     it('should print the end-game message and end the game', function() {
       takeTurn('object', round)
       takeTurn('function', round)
