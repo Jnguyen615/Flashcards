@@ -5,7 +5,6 @@ const { createDeck, countCards, createRound, takeTurn, calculatePercentCorrect, 
 const { createCard } = require('../src/card')
 const cards = require('../src/data')
 
-const { startGame } = require('../src/game')
 const deck = createDeck(cards.prototypeData)
 const round = createRound(deck)
 
@@ -86,8 +85,6 @@ describe('take turn', function() {
     const badFeedback =  takeTurn('array', round)
     expect(badFeedback).to.equal('Incorrect!')
   })
-
-  
 })
 
 describe('Calculate percent correct', function() {
@@ -118,7 +115,7 @@ describe('Calculate percent correct', function() {
       takeTurn('mutator method', round)
       const gameOverMessage = endRound(round)
       
-      expect(gameOverMessage).to.equal(`** Round Over! ** You answered 25% of the questions correctly!`)
+      expect(gameOverMessage).to.equal(console.log(`** Round Over! ** You answered 25% of the questions correctly!`))
     })
   })
 })

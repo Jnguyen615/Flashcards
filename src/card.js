@@ -2,7 +2,7 @@ const createCard = (id, question, possibleAnswers, correctAnswer) => {
   return {
     id: id,
     question: question,
-    possibleAnswers: possibleAnswers,
+    answers: possibleAnswers,
     correctAnswer: correctAnswer
   }
 }

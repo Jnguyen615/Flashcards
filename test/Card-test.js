@@ -13,7 +13,7 @@ describe('card', function() {
     
     expect(card.id).to.equal(1);
     expect(card.question).to.equal('What allows you to define a set of related information using key-value pairs?');
-    expect(card.possibleAnswers).to.deep.equal(['object', 'array', 'function']);
+    expect(card.answers).to.deep.equal(['object', 'array', 'function']);
     expect(card.correctAnswer).to.equal('object');
   });  
 });
