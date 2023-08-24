@@ -21,16 +21,16 @@ const createRound = (deck) => {
 
 const takeTurn = (guess, round) => {
   const answer = round.currentCard.correctAnswer;
-    if (guess !== answer) {
-      round.incorrectGuesses.push(round.currentCard.id)
-    
+  const response = evaluateGuess(guess, answer)
+
+  if (response === 'Incorrect!') {
+    round.incorrectGuesses.push(round.currentCard.id)
   }
-      round.turns++;
-      round.deck.shift()
-      round.currentCard = round.deck[0];
- 
-    return evaluateGuess(guess, answer)
-  }
+  round.turns++;
+  round.deck.shift()
+  round.currentCard = round.deck[0];
+  return response 
+}
     
 const calculatePercentCorrect = (round) => {
   const numberCorrect = round.turns - round.incorrectGuesses.length
@@ -39,11 +39,6 @@ const calculatePercentCorrect = (round) => {
   
 const endRound = (round) => {
   const percent = calculatePercentCorrect(round)
-  if(round.currentCard === undefined) {
-    round.currentCard = null;
-  } else {
-    round.currentCard;
-  }
    console.log(`** Round Over! ** You answered ${percent}% of the questions correctly!`)
   }
 
