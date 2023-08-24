@@ -1,4 +1,5 @@
 const { evaluateGuess } = require('../src/card')
+const { stopTimer } = require('../src/timer')
 
 const createDeck = (cards) => {
   return {
@@ -40,6 +41,7 @@ const calculatePercentCorrect = (round) => {
 const endRound = (round) => {
   const percent = calculatePercentCorrect(round)
    console.log(`** Round Over! ** You answered ${percent}% of the questions correctly!`)
+   stopTimer()
   }
 
 
