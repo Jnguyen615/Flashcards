@@ -21,13 +21,13 @@ const createRound = (deck) => {
 
 const takeTurn = (guess, round) => {
   const answer = round.currentCard.correctAnswer;
-  if (guess !== answer) {
-    round.incorrectGuesses.push(round.currentCard.id)
+    if (guess !== answer) {
+      round.incorrectGuesses.push(round.currentCard.id)
     
   }
-    round.turns++;
-    round.deck.shift();
-    round.currentCard = round.deck[0];
+      round.turns++;
+      round.deck.shift()
+      round.currentCard = round.deck[0];
  
     return evaluateGuess(guess, answer)
   }
