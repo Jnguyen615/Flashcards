@@ -3,6 +3,7 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const { createCard } = require('../src/card')
 const { createDeck, createRound, countCards, endRound } = require('../src/round')
+const { startTimer } = require('../src/timer')
 
 const makeCards = (cards) => {
   console.log(data.prototypeData)
@@ -18,6 +19,7 @@ const startGame = () => {
 
   printQuestion(round)
   printMessage(deck)
+  startTimer()
   endRound(round)
 }
 
@@ -34,5 +36,5 @@ module.exports = {
   printMessage, 
   printQuestion, 
   startGame,
-  makeCards
+  makeCards,
 };
