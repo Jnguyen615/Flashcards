@@ -4,8 +4,6 @@
 
 ### Preview
 
-<iframe src="https://giphy.com/embed/NLuuywUyfwJsg3pUOi" width="480" height="302" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/NLuuywUyfwJsg3pUOi"></a></p>
-
 <img width="1238" alt="Screenshot 2023-08-24 at 4 20 45 PM" src="https://github.com/Jnguyen615/flashCards/assets/119434450/68f36311-3700-43f1-84b4-1777d91876fa">
 
 ### Installation Instructions 
